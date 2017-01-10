@@ -50,7 +50,7 @@ LinkList.prototype.addNodeAtFront = function(nodeParam) {
 		//Updating Head to Current/New Node
 		this._head = nodeParam;
 
-		//No Chnage In Tail
+		//No Change In Tail
 	}
 }
 
