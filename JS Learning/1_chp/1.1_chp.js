@@ -9,6 +9,7 @@
 		this._lastName = "Rehan";
 		this._age = 22;
 		this._eyeColor = "Black";
+
 	}
 
 
@@ -20,6 +21,7 @@
 	console.log(perObj._lastName)
 	console.log(perObj._age)
 	console.log(perObj._eyeColor);
+
 
 
 }());

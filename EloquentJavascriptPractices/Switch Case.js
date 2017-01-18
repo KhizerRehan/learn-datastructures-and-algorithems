@@ -1,4 +1,5 @@
 	(function() {
+		//IIFE Invoked
 		'use strict'
 
 		switch (prompt("What is the weather Like?")) {
