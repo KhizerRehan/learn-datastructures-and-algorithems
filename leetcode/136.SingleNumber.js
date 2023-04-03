@@ -221,3 +221,23 @@ var singleNumber = function(nums) {
   }())
   
   // ******************************
+
+  (function() {
+    const singleNumber = function(nums) {
+        let map = new Map();
+        let val = 0;
+        for (let num of nums) {
+            map.set(num, (map.get(num) || 0) + 1);
+        }
+        console.log(map, 'map');
+        
+        map.forEach((value,key)=>{
+            if (value === 1) {
+                val = key
+            }
+        })
+        return val;
+    };
+
+    console.log(singleNumber([2, 2, 5]))
+}())
