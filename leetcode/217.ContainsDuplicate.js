@@ -5,6 +5,7 @@
 // Khizer Attempted Solution:
 // Test Case passed
 // Submission: Failed: Time Limit Exceeded
+// https://leetcode.com/problems/contains-duplicate/
 
    var containsDuplicate = function(nums) {
 
