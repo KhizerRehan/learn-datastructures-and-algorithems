@@ -31,7 +31,6 @@
     return false;
 };
 // ******************************
-
 // Khizer Accepted Solution
 
   /**
@@ -53,3 +52,36 @@
     return Object.keys(duplicateHashMap).some(key => duplicateHashMap[key] > 1)
 };
 
+
+// ******************************
+// Khizer Accepted Solution
+
+var containsDuplicate = function(nums) {
+    const duplicates = [];
+
+    for (let idx = 0; idx < nums.length; idx++) {
+        const value = nums[idx];
+        if(!duplicates.includes(value)) {
+          duplicates.push(value);
+        }
+        else {
+          return true
+        }
+    }
+    return false;
+};
+// ******************************
+- https://leetcode.com/problems/contains-duplicate/submissions/973269856/
+
+
+var containsDuplicate = function(nums) {
+    const duplicates = new Set(nums);
+    console.log("Nums", nums);
+    console.log("Set", duplicates);
+
+    return nums.length != duplicates.size;
+};
+
+// [1,2,3,1]
+console.log(containsDuplicate([1, 2, 3, 1]))
+console.log(containsDuplicate([1, 2, 3, 4]))
