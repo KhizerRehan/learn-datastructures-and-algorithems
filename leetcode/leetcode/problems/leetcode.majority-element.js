@@ -56,13 +56,10 @@
 
     for (let i = 0; i < nums.length; i++) {
       if (table.has(nums[i])) {
-        debugger;
         table.set(nums[i], table.get(nums[i]) + 1)
-
         if (table.get(nums[i]) > times) {
           return nums[i]
         }
-
         continue
       }
 

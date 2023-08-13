@@ -2,7 +2,7 @@
 // ===============================
 // [Using Hashmap:]
 // ===============================
-(function() {
+(function () {
     function containsDuplicateElements(array) {
         if (!Array.isArray(array))
             return false
@@ -43,44 +43,43 @@
     console.log(containsDuplicateElements([1, 2, 3, 5, 6, 2]));
 }())
 
-// ===============================
-// [Using Array and Sorting:]
-// ===============================
-(function() {
-    function containsDuplicateElements(array) {
-        if (!Array.isArray(array))
-            return false
+    // ===============================
+    // [Using Array and Sorting:]
+    // ===============================
+    (function () {
+        function containsDuplicateElements(array) {
+            if (!Array.isArray(array))
+                return false
 
-        if (Array.isArray(array) && array.length === 1)
+            if (Array.isArray(array) && array.length === 1) {
+                return false;
+            }
+            array = array.sort(function (a, b) {
+                return a - b
+            });
+            // sort element to compare prev/next element/
+
+            for (let index = 0; index < array.length; index++) {
+                if (array[index] === array[index + 1])
+                    return true;
+            }
+
             return false;
-
-        debugger ;
-        array = array.sort(function(a, b) {
-            return a - b
-        });
-        // sort element to compare prev/next element/
-
-        for (let index = 0; index < array.length; index++) {
-            if (array[index] === array[index + 1])
-                return true;
         }
 
-        return false;
-    }
-
-    console.log(containsDuplicateElements({}));
-    console.log(containsDuplicateElements([]));
-    console.log(containsDuplicateElements([1, 2, 4]));
-    console.log(containsDuplicateElements([1, 5, 2, 4, 5]));
-    console.log(containsDuplicateElements([1, 22, 213, 2, 6, 3]));
-}())
+        console.log(containsDuplicateElements({}));
+        console.log(containsDuplicateElements([]));
+        console.log(containsDuplicateElements([1, 2, 4]));
+        console.log(containsDuplicateElements([1, 5, 2, 4, 5]));
+        console.log(containsDuplicateElements([1, 22, 213, 2, 6, 3]));
+    }())
 
 // ===============================
 // Check Duplicates:
 const hasDuplicates = arr = >
-new Set ( arr ) .size < arr.length
-hasDuplicates ( [ 1 , 2 , 3 ] ) // false
-hasDuplicates ( [ 4 , 5 , 4 ] ) // true
-hasDuplicates ( [ ' str ' , ' obj ' , ' str ' ] ) // true
+    new Set(arr).size < arr.length
+hasDuplicates([1, 2, 3]) // false
+hasDuplicates([4, 5, 4]) // true
+hasDuplicates([' str ', ' obj ', ' str ']) // true
 
 // ===============================
