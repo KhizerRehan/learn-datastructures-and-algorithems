@@ -74,7 +74,7 @@
         console.log(containsDuplicateElements([1, 22, 213, 2, 6, 3]));
     }())
 
-// ===============================
+
 // Check Duplicates:
 const hasDuplicates = arr = >
     new Set(arr).size < arr.length
@@ -83,3 +83,60 @@ hasDuplicates([4, 5, 4]) // true
 hasDuplicates([' str ', ' obj ', ' str ']) // true
 
 // ===============================
+// NeetCode Solution:
+// ===============================
+const containsDuplicate = (nums) => 
+    if(nums.length === 0) {
+        return false;
+    }
+
+    const set = new Set();
+    for (const num of nums) {
+        if(set.has(num)) return true;
+        set.add(num)
+    }
+    return false;
+};
+
+
+// ## ChatGPT:
+
+// Using Set
+function hasDuplicates(arr) {
+    return new Set(arr).size !== arr.length;
+}
+
+// Using Map
+function hasDuplicates(arr) {
+    const map = new Map();
+
+    for (const v of arr) {
+        if (map.has(v)) return true;
+        map.set(v, true);
+    }
+    return false;
+}
+
+
+(function() {
+
+    function hasDuplicates(nums, hashmap={}) {
+
+        if (!Array.isArray(nums) || nums.length === 0) {
+            return false;
+        }
+
+        for (const value of nums) {
+
+            if (!hashmap[value]) {
+                hashmap[value] = 1
+            } else {
+                hashmap[value] += 1
+            }
+        }
+        return !!Object.values(hashmap).some(value => value > 1)
+    }
+
+    console.log(hasDuplicates([1, 2, 3]));
+    console.log(hasDuplicates([1, 2, 3, 3]));
+}());
